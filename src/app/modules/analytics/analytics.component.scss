@@ -1,6 +1,10 @@
-mat-tab-header.mat-tab-header{
-    background-color: red;
+
+
+.mat-tab-header {
+  background-color: #bddffb;
 }
-.mat-tab-label.mat-tab-label-active {
-    color: #ffffff;
- }
+
+.mat-tab-label-content {
+  color: rgb(53, 0, 122);
+  font-weight: bold;
+}
