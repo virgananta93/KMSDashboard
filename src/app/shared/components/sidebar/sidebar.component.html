@@ -1,0 +1,45 @@
+<div  [@onSideNavChange]="sidebarState" class="sideNav">
+    <mat-toolbar>
+        <mat-toolbar-row>
+            <span class="label app-title" [@iconAnimation]="sidebarState"> K </span>
+            <span class="label app-title" [@labelAnimation]="sidebarState">MS</span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+
+    <mat-nav-list class="menu-list sidebar_menu">
+
+        <a mat-list-item routerLinkActive="active-list-item" routerLink="/" title="Dashboard">
+            <mat-icon class="icon" [@iconAnimation]="sidebarState">dashboard</mat-icon>
+            <span class="label" [@labelAnimation]="sidebarState">Dashboard</span>
+        </a>
+
+
+        <a mat-list-item routerLinkActive="active-list-item" routerLink="/register" title="edit">
+            <mat-icon class="icon" [@iconAnimation]="sidebarState">edit</mat-icon>
+            <span class="label" [@labelAnimation]="sidebarState">Register</span>
+        </a>
+
+        <a mat-list-item routerLinkActive="active-list-item" routerLink="feedback" title="Feedback">
+            <mat-icon class="icon" [@iconAnimation]="sidebarState">people</mat-icon>
+            <span class="label" [@labelAnimation]="sidebarState">Patient</span>
+        </a>
+
+        <a mat-list-item routerLinkActive="active-list-item" routerLink="feedback" title="Feedback">
+            <mat-icon class="icon" [@iconAnimation]="sidebarState">show_chart</mat-icon>
+            <span class="label" [@labelAnimation]="sidebarState">Analytics</span>
+        </a>
+
+    </mat-nav-list>
+    <span class="spacer"></span>
+        <mat-divider></mat-divider>
+
+
+    <mat-nav-list class="bottom-menu-list sidebar_menu">
+    
+        <a mat-list-item routerLinkActive="active-list-item" title="Feedback" (click)="toggleSideNav()">
+            <mat-icon class="icon" [@iconAnimation]="sidebarState">menu_open</mat-icon>
+            <span class="label" [@labelAnimation]="sidebarState">Collapse</span>
+        </a>
+    </mat-nav-list>
+
+    </div>

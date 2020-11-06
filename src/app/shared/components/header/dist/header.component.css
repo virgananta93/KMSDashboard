@@ -1,0 +1,12 @@
+.spacer {
+  flex: 1 auto;
+}
+
+.header-item ul {
+  display: flex;
+}
+.header-item li {
+  justify-items: center;
+  justify-content: space-between;
+  list-style: none;
+}

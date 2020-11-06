@@ -1,0 +1,32 @@
+// FOR THE COMPONENT
+@import '~@angular/material/theming';
+@import '../../app.component.scss';
+
+:root {
+  font-family: $primary-fonts;
+
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+
+mat-drawer-container {
+  height: 100%;
+  font-family: $primary-fonts;
+
+}
+
+mat-drawer-content {
+  display: flex;
+  flex-direction: column;
+
+}
+
+mat-drawer {
+  min-width: 60px;
+  background: $primary-color;
+}
