@@ -8,7 +8,7 @@
 
     <mat-nav-list class="menu-list sidebar_menu">
 
-        <a mat-list-item routerLinkActive="active-list-item" routerLink="/" title="Dashboard">
+        <a mat-list-item routerLinkActive="active-list-item" routerLink="/dashboard" title="Dashboard">
             <mat-icon class="icon" [@iconAnimation]="sidebarState">dashboard</mat-icon>
             <span class="label" [@labelAnimation]="sidebarState">Dashboard</span>
         </a>
@@ -16,15 +16,15 @@
 
         <a mat-list-item routerLinkActive="active-list-item" routerLink="/register" title="edit">
             <mat-icon class="icon" [@iconAnimation]="sidebarState">edit</mat-icon>
-            <span class="label" [@labelAnimation]="sidebarState">Register</span>
+            <span class="label" [@labelAnimation]="sidebarState">Registration</span>
         </a>
 
-        <a mat-list-item routerLinkActive="active-list-item" routerLink="feedback" title="Feedback">
+        <a mat-list-item routerLinkActive="active-list-item" routerLink="/patient" title="Feedback">
             <mat-icon class="icon" [@iconAnimation]="sidebarState">people</mat-icon>
             <span class="label" [@labelAnimation]="sidebarState">Patient</span>
         </a>
 
-        <a mat-list-item routerLinkActive="active-list-item" routerLink="feedback" title="Feedback">
+        <a mat-list-item routerLinkActive="active-list-item" routerLink="/analytics" title="Feedback">
             <mat-icon class="icon" [@iconAnimation]="sidebarState">show_chart</mat-icon>
             <span class="label" [@labelAnimation]="sidebarState">Analytics</span>
         </a>

@@ -1,3 +1,4 @@
+import { BreadcrumbModule } from 'angular-crumbs';
 import { RouterModule } from '@angular/router';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -30,7 +31,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatListModule,
     MatBadgeModule,
     MatSidenavModule,
-    RouterModule
+    RouterModule,
+    BreadcrumbModule
 
   ],
   exports: [

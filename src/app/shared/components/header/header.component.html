@@ -1,6 +1,11 @@
 <mat-toolbar >
     <mat-toolbar-row>
- 
+        <breadcrumb #parent>
+            <span class="breadcrumb" *ngFor="let route of parent.breadcrumbs">
+                <a mat-button *ngIf="!route.terminal" href="" [routerLink]="[route.url]">{{ route.displayName }}</a>
+                <a mat-button *ngIf="route.terminal">KMS HOME <mat-icon>keyboard_arrow_right</mat-icon> {{ route.displayName }}</a>
+            </span>
+        </breadcrumb>
 
         <span class="spacer"></span>
 

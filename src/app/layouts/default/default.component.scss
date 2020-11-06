@@ -17,6 +17,7 @@
 mat-drawer-container {
   height: 100%;
   font-family: $primary-fonts;
+  background-color: #d3ecf847;
 
 }
 
@@ -30,3 +31,4 @@ mat-drawer {
   min-width: 60px;
   background: $primary-color;
 }
+
