@@ -94,11 +94,10 @@ public barChartOptions4 = {
   },
   scales: {
     xAxes: [{
-      scaleLabel: {
-        display: true,
-       
-        labelString: 'Day'
-      }
+      ticks: {
+        stepSize: 1,
+        beginAtZero: true
+     }
     }]
   },
   legend: {
@@ -117,7 +116,7 @@ public barChartOptions4 = {
 
   public barChartLabels = ['01', '02', '03', '04', '05', '06', '07'];
   public barChartLabels2 = ['01', '02', '03', '04', '05', '06', '07'];
-  public barChartLabels3 = ['01', '02', '03', '04', '05', '06', '07'];
+  public barChartLabels4 = ["Cardiology","Ward"];
 
   public barChartData = [
     { data: [65, 59, 80, 81, 56, 55, 40], label: 'Previous Week' },
@@ -135,8 +134,8 @@ public barChartOptions4 = {
   ];
 
   public barChartData4 = [
-    { data: [11, 24, 14, 22, 14, 1, 10], label: 'Cancelled' },
-    { data: [22, 14, 33, 12, 14, 5, 20], label: 'Non-cancelled' }
+    { data: [3,5], label: 'Cancelled' },
+    { data: [1,3], label: 'Non-cancelled' }
   ];
 
   public colors = [

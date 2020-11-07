@@ -3,7 +3,8 @@
 }
 
 mat-toolbar {
-  background-color:#fff;
+  background-color: #fff;
+ 
 }
 
 .header-item {
@@ -34,32 +35,50 @@ mat-toolbar {
   }
 }
 
-.breadcrumb {
-  background: none;
-  font-size: 0.8em;
-  margin: 0;
-  a,
-  span {
-    color: darkgrey;
-  }
-  a:hover,
-  span:hover {
-    color: dimgrey;
-    text-decoration: none;
-  }
-  li {
-    list-style: none;
-    float: left;
-    margin: 5px;
-  }
-  li:last-child {
-    margin-right: 20px;
-  }
-  li::after {
-    content: "->";
-    color: darkgrey;
-  }
-  li:last-child::after {
-    content: "";
+
+.mat-elevation-z5 {
+  position: relative;
+}
+
+.sticky {
+  position: fixed;
+  top: 50px;
+}
+
+.breadcrumb-top {
+  .breadcrumb {
+    background: none;
+    font-size: 0.8em;
+    margin: 0;
+
+    a,
+    span {
+      color: darkgrey;
+    }
+
+    a:hover,
+    span:hover {
+      color: dimgrey;
+      text-decoration: none;
+    }
+
+    li {
+      list-style: none;
+      float: left;
+      margin: 5px;
+    }
+
+    li:last-child {
+      margin-right: 20px;
+    }
+
+    li::after {
+      content: "->";
+      color: darkgrey;
+    }
+
+    li:last-child::after {
+      content: "";
+    }
   }
 }
