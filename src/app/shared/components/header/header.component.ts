@@ -1,6 +1,7 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { MediaObserver, MediaChange } from '@angular/flex-layout';
 import { Subscription } from 'rxjs';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-header',
@@ -10,10 +11,15 @@ import { Subscription } from 'rxjs';
 export class HeaderComponent implements OnInit, OnDestroy {
   mediaSub: Subscription;
   deviceXs: boolean;
-  constructor(public mediaObserver: MediaObserver){
+  constructor(public mediaObserver: MediaObserver) {
 
   }
 
+  imageUrl() {
+    return "url('https://source.unsplash.com/random/40x40?face')";
+  }
+  
+  @Input() sidenav: MatSidenav
 
   ngOnInit() {
     this.mediaSub = this.mediaObserver.media$.subscribe(
@@ -27,6 +33,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.mediaSub.unsubscribe();
   }
- 
- 
+
+
 }

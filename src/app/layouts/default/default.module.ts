@@ -1,3 +1,4 @@
+import { SidebarService } from './../../services/sidebar.service';
 import { MatIconModule } from '@angular/material/icon';
 import { BreadcrumbModule } from 'angular-crumbs';
 import { SharedModule } from './../../shared/shared.module';
@@ -21,8 +22,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { ChartsModule } from 'ng2-charts';
-import { StickyModule } from 'ng2-sticky-kit';
-
 @NgModule({
   declarations: [
     DefaultComponent,
@@ -48,8 +47,6 @@ import { StickyModule } from 'ng2-sticky-kit';
     MatTooltipModule,
     MatButtonToggleModule,
     ChartsModule,
-    StickyModule
-
-  ]
+  ],
 })
 export class DefaultModule { }

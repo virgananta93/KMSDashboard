@@ -25,8 +25,16 @@ export class AnalyticsComponent implements OnInit {
         scaleLabel: {
           display: true,
           labelString: 'Day'
-        }
-      }]
+        },
+        gridLines: {
+          display:false
+      }
+      }],
+      yAxes: [{
+        gridLines: {
+            display:false
+        }   
+    }]
     },
     legend: {
       display: true,
@@ -50,8 +58,16 @@ export class AnalyticsComponent implements OnInit {
           display: true,
 
           labelString: 'Day'
-        }
-      }]
+        },
+        gridLines: {
+          display:false
+      }
+      }],
+      yAxes: [{
+        gridLines: {
+            display:false
+        }   
+    }]
     },
     legend: {
       display: true,
@@ -75,8 +91,16 @@ export class AnalyticsComponent implements OnInit {
           display: true,
 
           labelString: 'Day'
-        }
-      }]
+        },
+        gridLines: {
+          display:false
+      }
+      }],
+      yAxes: [{
+        gridLines: {
+            display:false
+        }   
+    }]
     },
     legend: {
       display: true,
@@ -99,8 +123,16 @@ export class AnalyticsComponent implements OnInit {
         ticks: {
           stepSize: 1,
           beginAtZero: true
-        }
-      }]
+        },
+        gridLines: {
+          display:false
+      }
+      }],
+      yAxes: [{
+        gridLines: {
+            display:false
+        }   
+    }]
     },
     legend: {
       display: true,

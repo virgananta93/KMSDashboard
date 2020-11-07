@@ -14,20 +14,20 @@
 }
 
 
-mat-drawer-container {
+mat-sidenav-container {
   height: 100%;
   font-family: $primary-fonts;
   background-color: #a6d1e647;
 
 }
 
-mat-drawer-content {
+mat-sidenav-content {
   display: flex;
   flex-direction: column;
 
 }
 
-mat-drawer {
+mat-sidenav {
   min-width: 60px;
   background: $primary-color;
 }

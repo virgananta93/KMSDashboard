@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SidebarService } from 'src/app/services/sidebar.service';
-import { mainContentAnimation } from '../../animations';
+import { onMainContentChange } from 'src/app/animations';
 import { BreadcrumbService, Breadcrumb } from 'angular-crumbs';
 import { Title } from '@angular/platform-browser';
 import { RouterOutlet } from '@angular/router';
@@ -10,32 +10,35 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-default',
   templateUrl: './default.component.html',
   styleUrls: ['./default.component.scss'],
-  animations: [
-    mainContentAnimation(),
-  ]
+  animations: [ onMainContentChange ]
+
 })
 
 export class DefaultComponent implements OnInit {
   sidebarState: string;
+  public onSideNavChange: boolean;
 
   constructor(
     private titleService: Title,
     private sidebarService: SidebarService,
     private breadcrumbService: BreadcrumbService
-  ) { }
+  ) { 
+    this.sidebarService.sideNavState$.subscribe( res => {
+      console.log(res)
+      this.onSideNavChange = res;
+    })
+  }
 
   ngOnInit(): void {
-    this.sidebarService.sidebarStateObservable$
-      .subscribe((newState: string) => {
-        this.sidebarState = newState;
-      });
+    
+   
     this.breadcrumbService.breadcrumbChanged.subscribe(crumbs => {
       this.titleService.setTitle(this.createTitle(crumbs));
     });
   }
 
   private createTitle(routesCollection: Breadcrumb[]) {
-    const title = 'Angular Demo';
+    const title = 'KMS Dashboard';
     const titles = routesCollection.filter((route) => route.displayName);
 
     if (!titles.length) { return title; }

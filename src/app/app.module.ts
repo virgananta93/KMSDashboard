@@ -1,3 +1,4 @@
+import { SidebarService } from './services/sidebar.service';
 import { DefaultModule } from './layouts/default/default.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -19,7 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     DefaultModule,
   ],
-  providers: [],
+  providers: [SidebarService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

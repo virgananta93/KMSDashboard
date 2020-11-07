@@ -1,13 +1,16 @@
 <mat-toolbar>
     <mat-toolbar-row fxLayoutAlign="space-between center">
-        
+        <button mat-icon-button (click)="sidenav.toggle();">
+            <mat-icon>menu</mat-icon>
+          </button>
         <div class="first-item">
             <breadcrumb #parent>
-            <span class="breadcrumb" *ngFor="let route of parent.breadcrumbs">
-                <a mat-button *ngIf="!route.terminal" href="" [routerLink]="[route.url]">{{ route.displayName }}</a>
-                <a mat-button *ngIf="route.terminal">KMS HOME <mat-icon>keyboard_arrow_right</mat-icon> {{ route.displayName }}</a>
-            </span>
-        </breadcrumb>
+                <span class="breadcrumb" *ngFor="let route of parent.breadcrumbs">
+                    <a mat-button *ngIf="!route.terminal" href="" [routerLink]="[route.url]">{{ route.displayName }}</a>
+                    <a mat-button *ngIf="route.terminal">KMS HOME <mat-icon>keyboard_arrow_right</mat-icon>
+                        {{ route.displayName }}</a>
+                </span>
+            </breadcrumb>
         </div>
 
         <div class="header-item">
@@ -25,10 +28,8 @@
                     </button>
                 </li>
                 <li>
-                    <button mat-button [matMenuTriggerFor]="menu">
-                        <div class="user-picture">
-                            <img class="img-avatar"
-                                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80">
+                    <button mat-button [matMenuTriggerFor]="menu" disableRipple >
+                        <div class="user-picture" [ngStyle]="{'background-image': imageUrl()}">
                         </div>
                     </button>
                     <mat-menu #menu="matMenu">

@@ -1,18 +1,18 @@
-<mat-drawer-container>
-  <mat-drawer mode="side" opened #drawer>
+<mat-sidenav-container>
+  <!-- SIDE NAVIGATION -->
+  <mat-sidenav #leftSidenav mode="side" opened>
     <app-sidebar>
     </app-sidebar>
-  </mat-drawer>
+  </mat-sidenav>
 
-  <mat-drawer-content [@onSideNavChange]="sidebarState">
+  <mat-sidenav-content [@onMainContentChange]="onSideNavChange ? 'open': 'close'">
     <!-- HEADER -->
-    <app-header></app-header>
-    <!-- End of Header
-     -->
+    <app-header [sidenav]="leftSidenav"></app-header>
+    <!-- End of Header -->
     <router-outlet></router-outlet>
 
     <!-- FOOTER -->
     <app-footer></app-footer>
     <!-- End of Footer -->
-  </mat-drawer-content>
-</mat-drawer-container>
+  </mat-sidenav-content>
+</mat-sidenav-container>
