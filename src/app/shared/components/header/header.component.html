@@ -1,8 +1,8 @@
-<mat-toolbar id="secondToolbar" 
-[ngClass]="{'mat-elevation-z5' : true, 'sticky' : isSticky}">
-    <mat-toolbar-row>
-        <div>
-            <breadcrumb #parent id="secondToolbar">
+<mat-toolbar>
+    <mat-toolbar-row fxLayoutAlign="space-between center">
+        
+        <div class="first-item">
+            <breadcrumb #parent>
             <span class="breadcrumb" *ngFor="let route of parent.breadcrumbs">
                 <a mat-button *ngIf="!route.terminal" href="" [routerLink]="[route.url]">{{ route.displayName }}</a>
                 <a mat-button *ngIf="route.terminal">KMS HOME <mat-icon>keyboard_arrow_right</mat-icon> {{ route.displayName }}</a>
@@ -10,9 +10,7 @@
         </breadcrumb>
         </div>
 
-        <span class="spacer"></span>
-
-        <div class="header-item second-toolbar">
+        <div class="header-item">
             <ul>
                 <li>
                     <button mat-icon-button>

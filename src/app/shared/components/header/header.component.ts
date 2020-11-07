@@ -1,24 +1,32 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { MediaObserver, MediaChange } from '@angular/flex-layout';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
-  
-  isSticky: boolean = false;
+export class HeaderComponent implements OnInit, OnDestroy {
+  mediaSub: Subscription;
+  deviceXs: boolean;
+  constructor(public mediaObserver: MediaObserver){
 
-  @HostListener('window:scroll', ['$event'])
-  checkScroll() {
-    this.isSticky = window.pageYOffset >= 200;
   }
 
 
   ngOnInit() {
-    
+    this.mediaSub = this.mediaObserver.media$.subscribe(
+      (result: MediaChange) => {
+        console.log(result.mqAlias)
+        this.deviceXs = result.mqAlias === 'xs' ? true : false;
+      }
+    )
   }
 
+  ngOnDestroy() {
+    this.mediaSub.unsubscribe();
+  }
  
  
 }

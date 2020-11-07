@@ -1,3 +1,4 @@
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { BreadcrumbModule } from 'angular-crumbs';
 import { RouterModule } from '@angular/router';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
@@ -32,7 +33,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatBadgeModule,
     MatSidenavModule,
     RouterModule,
-    BreadcrumbModule
+    BreadcrumbModule,
+    FlexLayoutModule
 
   ],
   exports: [

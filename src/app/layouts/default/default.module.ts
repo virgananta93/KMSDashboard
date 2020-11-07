@@ -16,11 +16,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatCardModule } from '@angular/material/card';
-import {MatTabsModule} from '@angular/material/tabs';
-import {MatSelectModule} from '@angular/material/select';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatSelectModule } from '@angular/material/select';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { ChartsModule } from 'ng2-charts';
+import { StickyModule } from 'ng2-sticky-kit';
 
 @NgModule({
   declarations: [
@@ -46,8 +47,9 @@ import { ChartsModule } from 'ng2-charts';
     MatIconModule,
     MatTooltipModule,
     MatButtonToggleModule,
-    ChartsModule
-    
+    ChartsModule,
+    StickyModule
+
   ]
 })
 export class DefaultModule { }

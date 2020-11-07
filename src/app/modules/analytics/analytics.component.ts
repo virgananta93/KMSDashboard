@@ -11,6 +11,8 @@ export class AnalyticsComponent implements OnInit {
 
   constructor() { }
 
+
+
   public barChartOptions = {
     scaleShowVerticalLines: false,
     responsive: true,
@@ -46,7 +48,7 @@ export class AnalyticsComponent implements OnInit {
       xAxes: [{
         scaleLabel: {
           display: true,
-         
+
           labelString: 'Day'
         }
       }]
@@ -59,56 +61,56 @@ export class AnalyticsComponent implements OnInit {
       }
     }
   };
-// OLD PATIENT CHART
-public barChartOptions3 = {
-  scaleShowVerticalLines: false,
-  responsive: true,
-  title: {
-    text: 'Patient Appointments',
-    display: true
-  },
-  scales: {
-    xAxes: [{
-      scaleLabel: {
-        display: true,
-       
-        labelString: 'Day'
+  // OLD PATIENT CHART
+  public barChartOptions3 = {
+    scaleShowVerticalLines: false,
+    responsive: true,
+    title: {
+      text: 'Patient Appointments',
+      display: true
+    },
+    scales: {
+      xAxes: [{
+        scaleLabel: {
+          display: true,
+
+          labelString: 'Day'
+        }
+      }]
+    },
+    legend: {
+      display: true,
+      labels: {
+        boxWidth: 15,
+
       }
-    }]
-  },
-  legend: {
-    display: true,
-    labels: {
-      boxWidth: 15,
-
     }
-  }
-};
-// CANCELED VS NON CANCELLED
-public barChartOptions4 = {
-  scaleShowVerticalLines: false,
-  responsive: true,
-  title: {
-    text: 'Cancelledd vs Non-Cancelled Activities',
-    display: true
-  },
-  scales: {
-    xAxes: [{
-      ticks: {
-        stepSize: 1,
-        beginAtZero: true
-     }
-    }]
-  },
-  legend: {
-    display: true,
-    labels: {
-      boxWidth: 15,
+  };
+  // CANCELED VS NON CANCELLED
+  public barChartOptions4 = {
+    scaleShowVerticalLines: false,
+    responsive: true,
+    title: {
+      text: 'Cancelledd vs Non-Cancelled Activities',
+      display: true
+    },
+    scales: {
+      xAxes: [{
+        ticks: {
+          stepSize: 1,
+          beginAtZero: true
+        }
+      }]
+    },
+    legend: {
+      display: true,
+      labels: {
+        boxWidth: 15,
 
+      }
     }
-  }
-};
-// END OF OPTIONS
+  };
+  // END OF OPTIONS
   public barChartType = 'bar';
   public barChartType4 = 'horizontalBar';
 
@@ -116,7 +118,7 @@ public barChartOptions4 = {
 
   public barChartLabels = ['01', '02', '03', '04', '05', '06', '07'];
   public barChartLabels2 = ['01', '02', '03', '04', '05', '06', '07'];
-  public barChartLabels4 = ["Cardiology","Ward"];
+  public barChartLabels4 = ["Cardiology", "Ward"];
 
   public barChartData = [
     { data: [65, 59, 80, 81, 56, 55, 40], label: 'Previous Week' },
@@ -134,8 +136,8 @@ public barChartOptions4 = {
   ];
 
   public barChartData4 = [
-    { data: [3,5], label: 'Cancelled' },
-    { data: [1,3], label: 'Non-cancelled' }
+    { data: [3, 5], label: 'Cancelled' },
+    { data: [1, 3], label: 'Non-cancelled' }
   ];
 
   public colors = [
