@@ -2,11 +2,13 @@
   <!-- SIDE NAVIGATION -->
   <mat-sidenav #leftSidenav mode="side" opened>
     <app-sidebar>
+      
     </app-sidebar>
   </mat-sidenav>
 
   <mat-sidenav-content [@onMainContentChange]="onSideNavChange ? 'open': 'close'">
     <!-- HEADER -->
+    
     <app-header [sidenav]="leftSidenav"></app-header>
     <!-- End of Header -->
     <router-outlet></router-outlet>

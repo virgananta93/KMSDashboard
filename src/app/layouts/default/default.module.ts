@@ -22,6 +22,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { ChartsModule } from 'ng2-charts';
+import { MatButtonModule } from '@angular/material/button';
+
 @NgModule({
   declarations: [
     DefaultComponent,
@@ -47,6 +49,7 @@ import { ChartsModule } from 'ng2-charts';
     MatTooltipModule,
     MatButtonToggleModule,
     ChartsModule,
+    MatButtonModule
   ],
 })
 export class DefaultModule { }
