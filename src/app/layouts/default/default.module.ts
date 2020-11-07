@@ -1,4 +1,4 @@
-
+import { MatIconModule } from '@angular/material/icon';
 import { BreadcrumbModule } from 'angular-crumbs';
 import { SharedModule } from './../../shared/shared.module';
 import { PostsComponent } from './../../modules/posts/posts.component';
@@ -17,6 +17,10 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatCardModule } from '@angular/material/card';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatSelectModule} from '@angular/material/select';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -37,7 +41,13 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatPaginatorModule,
     MatTableModule,
     BreadcrumbModule,
-    MatTabsModule
+    MatTabsModule,
+    MatSelectModule,
+    MatIconModule,
+    MatTooltipModule,
+    MatButtonToggleModule,
+    ChartsModule
+    
   ]
 })
 export class DefaultModule { }
