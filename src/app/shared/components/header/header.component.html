@@ -1,18 +1,19 @@
 <mat-toolbar>
-    <mat-toolbar-row fxLayoutAlign="space-between center">
+    <mat-toolbar-row fxLayoutAlign="space-between center" fxLayout="row wrap">
         <button mat-icon-button (click)="sidenav.toggle();">
             <mat-icon>menu</mat-icon>
-          </button>
+        </button>
         <div class="first-item">
             <breadcrumb #parent>
                 <span class="breadcrumb" *ngFor="let route of parent.breadcrumbs">
                     <a mat-button *ngIf="!route.terminal" href="" [routerLink]="[route.url]">{{ route.displayName }}</a>
-                    <a mat-button *ngIf="route.terminal">KMS HOME <mat-icon>keyboard_arrow_right</mat-icon>
+
+                    <a mat-button *ngIf="route.terminal">
                         {{ route.displayName }}</a>
                 </span>
             </breadcrumb>
         </div>
-
+        <span class="spacer"></span>
         <div class="header-item">
             <ul>
                 <li>
@@ -28,7 +29,7 @@
                     </button>
                 </li>
                 <li>
-                    <button mat-button [matMenuTriggerFor]="menu" disableRipple >
+                    <button mat-button [matMenuTriggerFor]="menu" disableRipple>
                         <div class="user-picture" [ngStyle]="{'background-image': imageUrl()}">
                         </div>
                     </button>

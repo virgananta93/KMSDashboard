@@ -11,7 +11,9 @@
     
     <app-header [sidenav]="leftSidenav"></app-header>
     <!-- End of Header -->
-    <router-outlet></router-outlet>
+    <div class="main-wrapper" fxFlex fxLayout="column" fxLayoutGap="10px">
+      <router-outlet></router-outlet>
+    </div>
 
     <!-- FOOTER -->
     <app-footer></app-footer>

@@ -1,3 +1,4 @@
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BreadcrumbModule } from 'angular-crumbs';
 import { RouterModule } from '@angular/router';
@@ -34,7 +35,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatSidenavModule,
     RouterModule,
     BreadcrumbModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatCheckboxModule
 
   ],
   exports: [

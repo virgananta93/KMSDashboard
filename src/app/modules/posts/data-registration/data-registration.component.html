@@ -1,0 +1,154 @@
+<div class="wrapper">
+    <div class="container">
+
+        <div class="register-form">
+            <div class="first-row" fxLayout="row wrap" fxLayoutAlign="space-between center">
+                <div>
+                    <h2 class="page-title">Registrations</h2>
+                    <h4>Search and manage existing registrations or create new.</h4>
+                </div>
+                <div>
+                    <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+                        <mat-button-toggle value="list">
+                            <mat-icon>list</mat-icon> List view
+                        </mat-button-toggle>
+                        <mat-button-toggle value="schedule">
+                            <mat-icon>date_range</mat-icon> Schedule view
+                        </mat-button-toggle>
+                    </mat-button-toggle-group>
+                </div>
+
+            </div>
+
+            <div class="second-row">
+                <div fxLayout="row" fxLayoutAlign="end end">
+                    <button mat-flat-button color="primary">
+                        <mat-icon>add</mat-icon> Create New
+                    </button>
+                </div>
+            </div>
+
+            <div class="third-row">
+                <div class="example-container" fxLayout="row" fxLayoutAlign="start center">
+                    <div class="field-group" fxlayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px">
+                        <mat-form-field appearance="fill" matTooltip="Search by, you can search the data by ex. patient name"
+                        matTooltipPosition="below"
+                        aria-tooltip="Search by, you can search the data by ex. patient name">
+                            <mat-label>Registration Type</mat-label>
+                            <mat-select>
+                                <mat-option value="option">All registrations</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill" matTooltip="Search by, you can search the data by ex. patient name"
+                        matTooltipPosition="below"
+                        aria-tooltip="Search by, you can search the data by ex. patient name">
+                            <mat-label><mat-icon class="material-icon-outlined">search</mat-icon> Search</mat-label>
+                            <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+                        </mat-form-field>
+                        <mat-form-field appearance="fill"  matTooltip="Search by, you can search the data by ex. patient name"
+                        matTooltipPosition="below"
+                        aria-tooltip="Search by, you can search the data by ex. patient name">
+                            <mat-label>Search by</mat-label>
+                            <mat-select disableRipple>
+                              <mat-option value="1">Medical Staff</mat-option>
+                              <mat-option value="2">Patient Name</mat-option>
+                            </mat-select>
+                            
+                          </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="mat-elevation-z8">
+                    <table mat-table [dataSource]="dataSource" matSort>
+
+                        <!-- Checkbox Column -->
+                        <ng-container matColumnDef="select">
+                            <mat-header-cell *matHeaderCellDef>
+                                <mat-checkbox (change)="$event ? masterToggle() : null"
+                                    [checked]="selection.hasValue() && isAllSelected()"
+                                    [indeterminate]="selection.hasValue() && !isAllSelected()"
+                                    [aria-label]="checkboxLabel()">
+                                </mat-checkbox>
+                            </mat-header-cell>
+                            <mat-cell *matCellDef="let row">
+                                <mat-checkbox (click)="$event.stopPropagation()"
+                                    (change)="$event ? selection.toggle(row) : null"
+                                    [checked]="selection.isSelected(row)" [aria-label]="checkboxLabel(row)">
+                                </mat-checkbox>
+                            </mat-cell>
+                        </ng-container>
+
+
+                        <!-- ID Column -->
+                        <ng-container matColumnDef="id"  fxFlex="5">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header > ID </mat-header-cell>
+                            <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+                        </ng-container>
+
+                        <!-- Name Column -->
+                        <ng-container matColumnDef="progress">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header> Status </mat-header-cell>
+                            <mat-cell *matCellDef="let row"> {{row.progress}} </mat-cell>
+                        </ng-container>
+
+                        <!-- Username Column -->
+                        <ng-container matColumnDef="name">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header> username </mat-header-cell>
+                            <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+                        </ng-container>
+
+                        <!-- Color Column -->
+                        <ng-container matColumnDef="address">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header> Address </mat-header-cell>
+                            <mat-cell *matCellDef="let row" [style.color]="row.address"> {{row.address}} </mat-cell>
+                        </ng-container>
+
+                        <ng-container matColumnDef="edit" >
+                            <mat-header-cell *matHeaderCellDef> Commands </mat-header-cell>
+                            <mat-cell *matCellDef="let row" class="table-action">
+
+                                <button mat-icon-button matTooltip="Edit data of patient"
+                                matTooltipPosition="below"
+                                aria-tooltip="Edit data of patient">
+                                    <mat-icon>edit</mat-icon>
+                                </button>
+
+                                <button mat-icon-button matTooltip="Delete data of patient"
+                                matTooltipPosition="below"
+                                aria-tooltip="Delete data of patient">
+                                    <mat-icon>delete</mat-icon>
+                                </button>
+
+                                <button mat-icon-button matTooltip="Delete data of patient"
+                                matTooltipPosition="below"
+                                aria-tooltip="Expand">
+                                    <mat-icon>expand_more</mat-icon>
+                                </button>
+
+                                <button mat-icon-button matTooltip="Delete data of patient"
+                                matTooltipPosition="below"
+                                aria-tooltip="Expand">
+                                    <mat-icon>more_horiz</mat-icon>
+                                </button>
+
+                            </mat-cell>
+                        </ng-container>
+
+                        <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
+
+                        <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)" class="example-element-row"
+                        [class.example-expanded-row]="expandedElement === row">
+                        </mat-row>
+
+                        <!-- Row shown when there is no matching data. -->
+                        <mat-row *matNoDataRow>
+                            <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                        </mat-row>
+                    </table>
+
+                    <mat-paginator [pageSizeOptions]="[10, 25, 100]"></mat-paginator>
+                </div>
+            </div>
+        </div>
+    </div>

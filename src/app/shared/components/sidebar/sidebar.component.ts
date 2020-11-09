@@ -23,7 +23,7 @@ export class SidebarComponent implements OnInit {
 
   public pages: Page[] = [
     {name: 'Dashboard', link:'/dashboard', icon: 'dashboard'},
-    {name: 'Registration', link:'/register', icon: 'edit'},
+    {name: 'Registration', link:'/registration', icon: 'edit'},
     {name: 'Patient', link:'/patient', icon: 'people'},
     {name: 'Analytics', link:'/analytics', icon: 'analytics'},
     {name: 'Help', link:'/', icon: 'help'},

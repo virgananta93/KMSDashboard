@@ -7,6 +7,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 exports.__esModule = true;
 exports.SharedModule = void 0;
+var checkbox_1 = require("@angular/material/checkbox");
+var flex_layout_1 = require("@angular/flex-layout");
+var angular_crumbs_1 = require("angular-crumbs");
+var router_1 = require("@angular/router");
 var sidebar_component_1 = require("./components/sidebar/sidebar.component");
 var footer_component_1 = require("./components/footer/footer.component");
 var header_component_1 = require("./components/header/header.component");
@@ -18,6 +22,8 @@ var icon_1 = require("@angular/material/icon");
 var button_1 = require("@angular/material/button");
 var menu_1 = require("@angular/material/menu");
 var list_1 = require("@angular/material/list");
+var badge_1 = require("@angular/material/badge");
+var sidenav_1 = require("@angular/material/sidenav");
 var SharedModule = /** @class */ (function () {
     function SharedModule() {
     }
@@ -35,7 +41,13 @@ var SharedModule = /** @class */ (function () {
                 icon_1.MatIconModule,
                 button_1.MatButtonModule,
                 menu_1.MatMenuModule,
-                list_1.MatListModule
+                list_1.MatListModule,
+                badge_1.MatBadgeModule,
+                sidenav_1.MatSidenavModule,
+                router_1.RouterModule,
+                angular_crumbs_1.BreadcrumbModule,
+                flex_layout_1.FlexLayoutModule,
+                checkbox_1.MatCheckboxModule
             ],
             exports: [
                 header_component_1.HeaderComponent,

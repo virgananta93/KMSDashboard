@@ -1,0 +1,56 @@
+.register-container {
+  .register-sidenav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    background: rgba(255, 0, 0, 0.5);
+  }
+
+  .register-form {
+    h2.page-title {
+      margin-bottom: 0;
+    }
+  }
+}
+
+table {
+  width: 100%;
+
+  .mat-row:nth-child(odd) {
+    background-color: #b5e2fc36;
+  }
+
+  mat-cell:first-of-type,
+  mat-header-cell:first-of-type,
+  mat-footer-cell:first-of-type {
+    padding: 0 30px;
+    flex: none;
+  }
+
+  mat-header-cell:last-of-type,
+  mat-footer-cell:last-of-type {
+    justify-content: center;
+  }
+
+  mat-cell:last-of-type {
+    padding: 0 24px;
+    font-size: 14px;
+    min-height: 48px;
+    text-align: center;
+    border-left: 1px solid #e0e0e0;
+    margin: 0 auto;
+    /* text-align: center; */
+    justify-content: center;
+  }
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td,
+th {
+  width: 25%;
+}

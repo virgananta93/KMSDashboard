@@ -1,4 +1,4 @@
-import { Component, OnInit , ViewEncapsulation} from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-posts',
@@ -7,6 +7,21 @@ import { Component, OnInit , ViewEncapsulation} from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class PostsComponent implements OnInit {
+
+  registrationList = [
+    {
+      name: "New Registration"
+    },
+    {
+      name: "Create Registration", 
+      subItems: [{ name: "Registration Type" }, { name: "Search or Add New Patient" }, { name: "Time Slot" }, { name: "Service Details" }]
+    },
+    {
+      name: "Finalize Registration", subItems: [{ name: "dfhfdg" }, { name: "gfhfg" }, { name: "fhfj3" }]
+    }
+  ];
+
+
 
   constructor() { }
 
