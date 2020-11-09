@@ -1,10 +1,9 @@
+import { ConfigService } from './../../services/config.service';
 import { Component, OnInit } from '@angular/core';
 import { SidebarService } from 'src/app/services/sidebar.service';
 import { onMainContentChange } from 'src/app/animations';
 import { BreadcrumbService, Breadcrumb } from 'angular-crumbs';
 import { Title } from '@angular/platform-browser';
-import { RouterOutlet } from '@angular/router';
-
 
 @Component({
   selector: 'app-default',
@@ -21,16 +20,20 @@ export class DefaultComponent implements OnInit {
   constructor(
     private titleService: Title,
     private sidebarService: SidebarService,
-    private breadcrumbService: BreadcrumbService
+    private breadcrumbService: BreadcrumbService,
+    private config:ConfigService
   ) { 
     this.sidebarService.sideNavState$.subscribe( res => {
       console.log(res)
       this.onSideNavChange = res;
+    }),
+    this.config.getData().subscribe(data =>{
+      console.warn(data);
     })
   }
 
   ngOnInit(): void {
-    
+   
    
     this.breadcrumbService.breadcrumbChanged.subscribe(crumbs => {
       this.titleService.setTitle(this.createTitle(crumbs));
@@ -48,7 +51,7 @@ export class DefaultComponent implements OnInit {
   }
   private titlesToString(titles) {
     return titles.reduce((prev, curr) => {
-      return `${curr.displayName} - ${prev}`;
+      return `${curr.displayName} > ${prev}`;
     }, '');
   }
 }
